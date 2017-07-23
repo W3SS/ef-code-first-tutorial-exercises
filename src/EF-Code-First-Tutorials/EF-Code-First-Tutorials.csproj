@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SchoolContext.cs" />
+    <Compile Include="SchoolDBContext.cs" />
     <Compile Include="Standard.cs" />
     <Compile Include="Student.cs" />
   </ItemGroup>

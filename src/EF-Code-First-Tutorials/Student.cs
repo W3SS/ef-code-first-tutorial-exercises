@@ -15,6 +15,10 @@ namespace EF_Code_First_Tutorials
         public decimal Height { get; set; }
         public float Weight { get; set; }
 
+        // Foreign Key Property -- must be nullable type to avoid INSERT exception
+        public int? StandardId { get; set; }
+
+        // Navigation Property
         public Standard Standard { get; set; }
     }
 }

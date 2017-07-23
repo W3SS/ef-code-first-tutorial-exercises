@@ -11,7 +11,7 @@ namespace EF_Code_First_Tutorials
         static void Main(string[] args)
         {
             // Add and save new Student to DB via EF
-            using (var context = new SchoolContext())
+            using (var context = new SchoolDBContext())
             {
                 Student student = new Student()
                 {
@@ -20,6 +20,8 @@ namespace EF_Code_First_Tutorials
 
                 context.Students.Add(student);
                 context.SaveChanges();
+                Console.Write("Changes saved. Press any key to exit.");
+                Console.ReadLine();
             }
         }
     }

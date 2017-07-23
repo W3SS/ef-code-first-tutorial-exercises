@@ -15,17 +15,19 @@ namespace EF_Code_First_Tutorials
 
         public SchoolDBContext() : base("name=SchoolDBConnectionString")
         {
-            Database.SetInitializer<SchoolDBContext>(new DropCreateDatabaseAlways<SchoolDBContext>());
+            //Database.SetInitializer<SchoolDBContext>(new DropCreateDatabaseAlways<SchoolDBContext>());
+
+            // Turn off DB initializer
+            //Database.SetInitializer<SchoolDBContext>(null);
+
+            // Set Seed data on DB initialization
+            Database.SetInitializer(new SchoolDBInitializer());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // Configure default DB schema
-            // modelBuilder.HasDefaultSchema("Admin");
-
-            // Map entity to table
-            //modelBuilder.Entity<Student>().ToTable("StudentInfo");
-            //modelBuilder.Entity<Standard>().ToTable("StandardInfo", "dbo");
+            // Configure Student Entity
+            modelBuilder.Configurations.Add(new StudentEntityConfiguration());
         }
     }
 }

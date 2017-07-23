@@ -12,5 +12,10 @@ namespace EF_Code_First_Tutorials
         public string StandardName { get; set; }
 
         public ICollection<Student> Students { get; set; }
+
+        public Standard()
+        {
+            Students = new List<Student>();
+        }
     }
 }
